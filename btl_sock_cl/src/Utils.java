@@ -5,7 +5,7 @@ import java.util.zip.Adler32;
 import java.util.zip.Checksum;
 
 public class Utils {
-    public static final int BUFFER_SIZE = 256*1024;
+    public static final int BUFFER_SIZE = 8*1024;
     public static final Pattern getPattern = Pattern.compile("(?<=(get|GET|geT|gEt|gET|Get|GeT|GEt).).*");
     public static final Pattern postPattern = Pattern.compile("(?<=(post|POST).).*");
     public static final Pattern piecePattern = Pattern.compile("(?<=(piece|PIECE).).*");
@@ -82,7 +82,7 @@ public class Utils {
         double etaM = Math.floor(eta / 60.0d);
         double etaS = Math.floor(eta - etaM * 60);
         double percent = ((fileLen - bytesRemainToRead) * 100 / fileLen);
-        String progressStr = action==Actions.UPLOAD?"Uploading: ":"Downloading: " + (fileLen - bytesRemainToRead) + "/" + fileLen + " . " + String.format("%.2f", percent) + "% . " + String.format("%.2f", speed) + "kbps . ETA = " + String.format("%.0f", etaM) + "m" + String.format("%.0f", etaS) + "s";
+        String progressStr = action==Actions.UPLOAD?"Uploading: ":"Downloading: " + (fileLen - bytesRemainToRead) + "/" + fileLen + " . " + String.format("%.2f", percent) + "% . " + String.format("%.2f", speed) + "kB/s . ETA = " + String.format("%.0f", etaM) + "m" + String.format("%.0f", etaS) + "s";
         System.out.print(progressStr);
         for (int i = 0; i < progressStr.length(); i++) System.out.print("\b");
     }

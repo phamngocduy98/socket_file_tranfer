@@ -2,10 +2,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class FileTranferMultiClient {
+public class FileTranferP2P {
     private Data data;
 
-    public FileTranferMultiClient(Data data) throws FileNotFoundException {
+    public FileTranferP2P(Data data) throws FileNotFoundException {
         this.data = data;
     }
 
@@ -22,13 +22,8 @@ public class FileTranferMultiClient {
         }
     }
 
-    public void nextPiece(SockClient sockClient, PiecePool piecePool, String pieceIdStr) throws IOException {
-        int pieceId = Integer.parseInt(pieceIdStr);
-        if (pieceId == piecePool.getMaxPieceId()){
-            System.out.println("[PIECE] Last piece requested");
-            return;
-        }
-        sockClient.write("piece "+(pieceId+1)).send();
+    public void nextPiece(SockClient sockClient) throws IOException {
+        sockClient.write("piece").send();
     }
 
     public static class Data implements SockClient.OnCloseListener{

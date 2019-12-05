@@ -18,8 +18,8 @@ public class Multi {
         FOLDER_PATH = FOLDER_PATH + clientId + "\\";
         System.out.println("Client path = " + Utils.getFolderPath());
 //        System.out.print("Enter server IP: ");
-        String serverIP = "192.168.98.2"; //scanner.nextLine();
-//        String serverIP = "127.0.0.1";
+//        String serverIP = "192.168.98.2"; //scanner.nextLine();
+        String serverIP = "127.0.0.1";
 //        System.out.print("Enter server port: ");
         int serverPort = 1259; //scanner.nextInt();
 //        scanner.nextLine();
@@ -33,20 +33,19 @@ public class Multi {
                 System.out.println("[ERROR] Client bind error, check server ip and port!");
                 return;
             }
-            new Thread(new SockServerTask.AcceptClientThread(friendSockServer){
+            new Thread(new SockServerTask.AcceptClientThread(friendSockServer) {
                 @Override
                 public void newClientThread(SockClient sockClient) {
                     new FriendReceivePieceThread(sockServer, sockClient, piecePool).start();
                 }
             }).start();
-
+            System.out.print(">");
             while (true) {
-                System.out.print(">");
                 String command = scanner.nextLine();
                 if (command.equals("ls")) {
                     Utils.selfLs();
                 } else if (command.equals("list")) {
-                    sockClient.write("ls").send();
+                    sockClient.write("list").send();
                 } else if (command.contains("get")) {
                     sockClient.write(command).send();
                 } else if (command.contains("post")) {
@@ -66,7 +65,7 @@ public class Multi {
 
     public static class SocketReceiveHandlerThread extends Thread {
         SockClient sockClient;
-        FileTranferMultiClient fileTranferMulti = null;
+        FileTranferP2P fileTranferP2P = null;
 
         public SocketReceiveHandlerThread(SockClient clientSocket) {
             this.sockClient = clientSocket;
@@ -80,30 +79,34 @@ public class Multi {
                     receivedMessage = sockClient.readString();
 //                    System.out.println("[SERVER RESPONSE] " + receivedMessage);
 
-                    if (receivedMessage.contains("ls")) {
+                    if (receivedMessage.contains("ERROR")) {
+                        // server response a error message
+                        System.out.println(receivedMessage);
+                    } else if (receivedMessage.contains("list")) {
                         // server response list of file on server
                         SockClientTask.receiveLS(sockClient);
-                    } else if (receivedMessage.contains("get")) {
+                    } else if (receivedMessage.contains("post")) {
                         // server response requested file (client download file that he requested)
-                        SockClientTask.receiveFile(sockClient, Utils.getDataFromCommand(Utils.Actions.GET, receivedMessage), Main.FOLDER_PATH, true);
-                    } else if (receivedMessage.contains("broadcast")){
+                        System.out.println("[BROADCAST Sv-Cl] Server is now sending the file!");
+                        SockClientTask.receiveFile(sockClient, Utils.getDataFromCommand(Utils.Actions.POST, receivedMessage), Main.FOLDER_PATH, true);
+                    } else if (receivedMessage.contains("broadcast")) {
                         // server want to broadcast a file, tell client to download this file.
-                        FileTranferMultiClient.Data data = FileTranferMultiClient.receiveBroadcastData(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.BROADCAST, receivedMessage));
+                        System.out.println("[BROADCAST P2P] Server is now ready to send pieces");
+                        FileTranferP2P.Data data = FileTranferP2P.receiveBroadcastData(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.BROADCAST, receivedMessage));
                         System.out.println(data.toString());
                         piecePool.setFileName(data.fileName, data.fileSize);
-                        fileTranferMulti = new FileTranferMultiClient(data);
-                        fileTranferMulti.nextPiece(sockClient, piecePool, "-1");
+                        fileTranferP2P = new FileTranferP2P(data);
+                        fileTranferP2P.nextPiece(sockClient);
                         Utils.setStartTime();
-                    } else if (receivedMessage.contains("piece")){
+                    } else if (receivedMessage.contains("piece")) {
                         // server will send a piece
-                        fileTranferMulti.receivePiece(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.PIECE,receivedMessage));
-                        fileTranferMulti.nextPiece(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.PIECE,receivedMessage));
-                    } else if (receivedMessage.contains("friend")){
-                        // a friend already own this piece, he will send you soon
-                        fileTranferMulti.nextPiece(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.FRIEND,receivedMessage));
+                        fileTranferP2P.receivePiece(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.PIECE, receivedMessage));
+                        fileTranferP2P.nextPiece(sockClient);
+//                        continue;
                     }
+                    System.out.print(">");
                 } catch (IOException e) {
-                    System.out.println("[ERROR " + sockClient.getClientAddress() + "] Socket IO Exception");
+                    System.out.println("[ERROR " + sockClient.getClientAddress() + "] Socket IO Exception"+ e.getMessage());
                     e.printStackTrace();
                     break;
                 }
@@ -118,11 +121,15 @@ public class Multi {
     }
 
 
-    public static class FriendReceivePieceThread extends SockServerTask.ClientThread {
+    public static class FriendReceivePieceThread extends Thread {
         PiecePool piecePool;
+        SockServer sockServer;
+        SockClient sockClient;
+
         public FriendReceivePieceThread(SockServer sockServer, SockClient sockClient, PiecePool piecePool) {
-            super(sockServer, sockClient);
             this.piecePool = piecePool;
+            this.sockServer = sockServer;
+            this.sockClient = sockClient;
         }
 
         @Override
@@ -149,7 +156,4 @@ public class Multi {
             System.out.println("[CONNECTION " + sockClient.getClientAddress() + "] FriendRequest connection closed!");
         }
     }
-
-
-
 }

@@ -6,7 +6,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fc4846-f84d-4ded-a9f4-09cc7ccbd9e0" name="Default Changelist" comment="" />
+    <list default="true" id="66fc4846-f84d-4ded-a9f4-09cc7ccbd9e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/FileTranferMultiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/FileTranferP2P.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/Multi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/PiecePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/PiecePool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockClientTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/SockClientTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockServerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/SockServerTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockServerTaskMulti.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Multi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PiecePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PiecePool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SockClientTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockClientTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SockServerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockServerTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SockServerTaskMulti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockServerTaskMulti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,35 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Multi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+            <state relative-caret-position="-660">
+              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,28 +51,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SockServerTaskMulti.java">
+        <entry file="file://$PROJECT_DIR$/src/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SockClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SockServerTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-430">
-              <caret line="29" column="140" selection-start-line="29" selection-start-column="140" selection-end-line="29" selection-end-column="140" />
+            <state relative-caret-position="-357">
+              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,12 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PiecePool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
-              <folding>
-                <element signature="e#1185#1186#0" expanded="true" />
-                <element signature="e#1247#1248#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="88" column="52" lean-forward="true" selection-end-line="112" />
             </state>
           </provider>
         </entry>
@@ -114,12 +87,19 @@
       <find>System.out.println(&quot;&gt;&quot;);</find>
       <find>System.out.println();</find>
       <find>readInt</find>
+      <find>&gt;</find>
+      <find>SockServer.FOLDER_PATH</find>
+      <find>System.out.print(&quot;&gt;&quot;);</find>
     </findStrings>
     <replaceStrings>
       <replace>uiPrint(</replace>
       <replace>System.out.println(</replace>
       <replace>System.out.print(&quot;&gt;&quot;);</replace>
+      <replace>Utils.getFolderPath()</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -128,33 +108,34 @@
         <option value="$PROJECT_DIR$/src/SocketClientTask.java" />
         <option value="$PROJECT_DIR$/src/SockServer.java" />
         <option value="$PROJECT_DIR$/src/SockClientTaskMulti.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/SockClientTask.java" />
         <option value="$PROJECT_DIR$/src/FileTranferMulti.java" />
-        <option value="$PROJECT_DIR$/src/SockServerTask.java" />
         <option value="$PROJECT_DIR$/src/FileTranferMultiUtils.java" />
         <option value="$PROJECT_DIR$/src/FileTranferMultiServer.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/SockClient.java" />
         <option value="$PROJECT_DIR$/src/FileTranferMultiClient.java" />
-        <option value="$PROJECT_DIR$/src/SockServerTaskMulti.java" />
         <option value="$PROJECT_DIR$/src/FileTranferMultiPiece.java" />
-        <option value="$PROJECT_DIR$/src/Multi.java" />
+        <option value="$PROJECT_DIR$/src/SockServerTaskMulti.java" />
         <option value="$PROJECT_DIR$/src/Utils.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/SockClientTask.java" />
+        <option value="$PROJECT_DIR$/src/SockServerTask.java" />
+        <option value="$PROJECT_DIR$/src/PiecePool.java" />
+        <option value="$PROJECT_DIR$/src/Multi.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="979" />
-    <option name="height" value="1040" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,11 +152,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NPServer" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.15977012" />
@@ -243,11 +226,20 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.70089287" visible="true" weight="0.17181209" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70089287" weight="0.6088766" />
       <window_info id="Structure" order="1" sideWeight="0.29910713" side_tool="true" weight="0.28683916" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -256,11 +248,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30802292" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22063038" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295129" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -278,10 +270,47 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/SockClientTaskMulti.java" />
     <entry file="file://$PROJECT_DIR$/src/FileTranferMultiClient.java" />
+    <entry file="file://$PROJECT_DIR$/src/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+        <state relative-caret-position="129">
+          <caret line="69" column="147" selection-start-line="69" selection-start-column="147" selection-end-line="69" selection-end-column="147" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SockServerTaskMulti.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="9" column="78" lean-forward="true" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SockServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SockClientTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SockServerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -290,77 +319,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SockClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="17">
           <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PiecePool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
-          <folding>
-            <element signature="e#1185#1186#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SockClientTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="151" selection-start-line="58" selection-start-column="151" selection-end-line="58" selection-end-column="151" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Multi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SockServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SockServerTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="29" column="140" selection-start-line="29" selection-start-column="140" selection-end-line="29" selection-end-column="140" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SockServerTaskMulti.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        <state relative-caret-position="-357">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PiecePool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="88" column="52" lean-forward="true" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Multi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -18,12 +18,13 @@ public class PiecePool {
         this.setFileName(fileName, fileSize);
     }
 
-    public PiecePool() {}
+    public PiecePool() {
+    }
 
     public void setFileName(String fileName, long fileSize) throws FileNotFoundException {
         this.fileSize = fileSize;
-        maxPieceId = (int) ((fileSize-1)/Utils.BUFFER_SIZE);
-        file = new RandomAccessFile(Utils.getFolderPath()+fileName, "rw");
+        maxPieceId = (int) ((fileSize - 1) / Utils.BUFFER_SIZE);
+        file = new RandomAccessFile(Utils.getFolderPath() + fileName, "rw");
         ownedPiece = Collections.synchronizedMap(new HashMap<>());
     }
 
@@ -42,22 +43,20 @@ public class PiecePool {
 
         byte[] readBuffer = new byte[Utils.BUFFER_SIZE];
         int fileOffset = pieceId * Utils.BUFFER_SIZE, bytesRead = 0, bytesToRead;
-        if (pieceId == maxPieceId){
-            bytesToRead = (int)(fileSize - maxPieceId*Utils.BUFFER_SIZE);
+        if (pieceId == maxPieceId) {
+            bytesToRead = (int) (fileSize - maxPieceId * Utils.BUFFER_SIZE);
         } else {
             bytesToRead = Utils.BUFFER_SIZE;
         }
         while (bytesRead < bytesToRead) {
-            synchronized (file){
+            synchronized (file) {
                 file.seek(fileOffset + bytesRead);
                 int result = file.read(readBuffer, bytesRead, bytesToRead - bytesRead);
                 bytesRead += result;
             }
         }
         long checksum = Utils.checksum(readBuffer);
-        if (pieceId % 2 == 0){
-            Utils.showProgress(Utils.Actions.UPLOAD, maxPieceId*Utils.BUFFER_SIZE,(maxPieceId-pieceId)*Utils.BUFFER_SIZE, Utils.startTime);
-        }
+        Utils.showProgress(Utils.Actions.UPLOAD, maxPieceId * Utils.BUFFER_SIZE, (maxPieceId - pieceId) * Utils.BUFFER_SIZE, Utils.startTime);
 //        System.out.println("send piece checksum="+checksum);
         sockClient.write(readBuffer, 0, bytesToRead).send();
         return true;
@@ -70,8 +69,8 @@ public class PiecePool {
 
     public long receivePiece(SockClient sockClient, int pieceId, byte[] writeBuffer) throws IOException {
         int fileOffset = pieceId * Utils.BUFFER_SIZE, bytesRead = 0, bytesToRead;
-        if (pieceId == maxPieceId){
-            bytesToRead = (int)(fileSize - maxPieceId*Utils.BUFFER_SIZE);
+        if (pieceId == maxPieceId) {
+            bytesToRead = (int) (fileSize - maxPieceId * Utils.BUFFER_SIZE);
         } else {
             bytesToRead = Utils.BUFFER_SIZE;
         }
@@ -80,21 +79,21 @@ public class PiecePool {
             result = sockClient.read(writeBuffer, bytesRead, bytesToRead - bytesRead);
             bytesRead += result;
         }
-        synchronized (file){
+        synchronized (file) {
             file.seek(fileOffset);
             file.write(writeBuffer);
         }
-        synchronized (ownedPiece){
+        synchronized (ownedPiece) {
             ownedPiece.put(pieceId, true);
         }
         long checksum = Utils.checksum(writeBuffer);
 //        System.out.println("receive piece checksum="+checksum);
-        if (pieceId % 2 == 0){
-            Utils.showProgress(Utils.Actions.DOWNLOAD, maxPieceId*Utils.BUFFER_SIZE,(maxPieceId-pieceId)*Utils.BUFFER_SIZE, Utils.startTime);
-        }
-        if (ownedPiece.size() > maxPieceId){
-            System.out.println("COMPLETE!");
-//            close();
+        Utils.showProgress(Utils.Actions.DOWNLOAD, maxPieceId * Utils.BUFFER_SIZE, (maxPieceId - pieceId) * Utils.BUFFER_SIZE, Utils.startTime);
+//        System.out.println("[PIECE] "+pieceId+"/"+maxPieceId+" (size="+bytesToRead+")");
+        if (ownedPiece.size() > maxPieceId) {
+            double duration = (double)(System.currentTimeMillis()-Utils.startTime)/1000d;
+            System.out.println("[BROADCAST P2P] Download P2P Complete in "+duration +"s . Speed = "+fileSize/1000d/duration+" kB/s");
+            close();
         }
         return checksum;
     }

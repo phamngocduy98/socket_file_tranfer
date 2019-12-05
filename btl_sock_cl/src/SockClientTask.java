@@ -28,32 +28,30 @@ public class SockClientTask {
     }
 
     public static void sendLs(SockClient sockClient, String path) throws IOException {
-        sockClient.write("ls");
+        sockClient.write("list");
         String[] fileNames = Utils.listFiles(path);
         for (String fileName : fileNames) {
             sockClient.write(fileName);
         }
-        sockClient.write("#END_OF_LIST");
+        sockClient.write("[LIST] END");
         sockClient.send();
-        System.out.print(">");
     }
     public static void receiveLS(SockClient sockClient) throws IOException {
         String data;
         do {
             data = sockClient.readString();
-            if (!data.contains("#END")) {
+            if (!data.contains("END")) {
                 System.out.println("```" + data);
             }
         }
-        while (!data.contains("#END"));
+        while (!data.contains("END"));
     }
 
     public static void sendFile(SockClient sockClient, String fileName, String path, boolean showProgress) throws IOException {
         File file = new File(path + fileName);
         if (file.exists()) {
+            sockClient.write("post "+fileName);
             long startTime = System.currentTimeMillis();
-            sockClient.write("get " + fileName);
-            sockClient.write("#GET_READY");
             long fileLen = file.length();
             sockClient.write(fileLen).send();
             System.out.println("[SEND " + ((source== Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] Sending File '" + fileName + "'. size = " + fileLen);
@@ -82,18 +80,13 @@ public class SockClientTask {
             fis.close();
             System.out.println("[SEND " + ((source==Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] File '" + fileName + "' tranfer completed in " + (System.currentTimeMillis() - startTime) + " ms");
         } else {
-            sockClient.write("[SEND ERROR] File not found on server machine!").send();
+            System.out.println("[SEND ERROR] File not found!");
         }
     }
 
 
     public static void receiveFile(SockClient sockClient, String fileName, String path, boolean showProgress) throws IOException {
         File file = new File(path+ fileName);
-        String readyToSend = sockClient.readString();
-        if (readyToSend.contains("ERROR")) {
-            System.out.println(readyToSend);
-            return;
-        }
         long startTime = System.currentTimeMillis();
         file.createNewFile();
         long fileLen = sockClient.readLong();
