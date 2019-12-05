@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="btl_sock_sv:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/btl_sock_sv_jar</output-path>
+    <root id="archive" name="btl_sock_sv.jar">
+      <element id="module-output" name="btl_sock_sv" />
+    </root>
+  </artifact>
+</component>
