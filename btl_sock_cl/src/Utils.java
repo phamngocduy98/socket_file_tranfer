@@ -24,7 +24,7 @@ public class Utils {
     }
 
     public static String getFolderPath(){
-        return Multi.FOLDER_PATH;
+        return ClientMain.FOLDER_PATH;
     }
 
     public static String[] listFiles(String folderPath){

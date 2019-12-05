@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class Multi {
+public class ClientMain {
     public static String FOLDER_PATH = "H:\\dl\\";
     public static PiecePool piecePool = new PiecePool();
     private static SockServer friendSockServer;
@@ -17,9 +17,10 @@ public class Multi {
         String clientId = scanner.nextLine();
         FOLDER_PATH = FOLDER_PATH + clientId + "\\";
         System.out.println("Client path = " + Utils.getFolderPath());
-//        System.out.print("Enter server IP: ");
-//        String serverIP = "192.168.98.2"; //scanner.nextLine();
-        String serverIP = "127.0.0.1";
+        System.out.print("Enter server IP: ");
+        String serverIP = scanner.nextLine();
+//        String serverIP = "127.0.0.1";
+//        String serverIP = "192.168.98.2";
 //        System.out.print("Enter server port: ");
         int serverPort = 1259; //scanner.nextInt();
 //        scanner.nextLine();
@@ -88,7 +89,7 @@ public class Multi {
                     } else if (receivedMessage.contains("post")) {
                         // server response requested file (client download file that he requested)
                         System.out.println("[BROADCAST Sv-Cl] Server is now sending the file!");
-                        SockClientTask.receiveFile(sockClient, Utils.getDataFromCommand(Utils.Actions.POST, receivedMessage), Main.FOLDER_PATH, true);
+                        SockClientTask.receiveFile(sockClient, Utils.getDataFromCommand(Utils.Actions.POST, receivedMessage), Utils.getFolderPath(), true);
                     } else if (receivedMessage.contains("broadcast")) {
                         // server want to broadcast a file, tell client to download this file.
                         System.out.println("[BROADCAST P2P] Server is now ready to send pieces");
@@ -102,7 +103,7 @@ public class Multi {
                         // server will send a piece
                         fileTranferP2P.receivePiece(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.PIECE, receivedMessage));
                         fileTranferP2P.nextPiece(sockClient);
-//                        continue;
+                        continue;
                     }
                     System.out.print(">");
                 } catch (IOException e) {

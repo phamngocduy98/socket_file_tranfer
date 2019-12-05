@@ -5,7 +5,7 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Multi {
+public class ServerMain {
     private static PiecePool piecePool;
     private static AtomicInteger currentPieceNum = new AtomicInteger(-1);
 
@@ -14,9 +14,10 @@ public class Multi {
         SockServer sockServer = null;
         piecePool = new PiecePool();
 
-//            System.out.print("Enter server ip: ");
-//        String ip = "192.168.98.2"; //scanner.nextLine();
-        String ip = "127.0.0.1";
+        System.out.print("Enter server ip: ");
+        String ip = scanner.nextLine();
+//        String ip = "192.168.98.2";
+//        String ip = "127.0.0.1";
         try {
             sockServer = new SockServer(ip, 1259);
             System.out.println("[SERVER] Listening " + sockServer.getServerIP() + ":" + sockServer.getServerPort());
@@ -75,11 +76,14 @@ public class Multi {
         }
     }
 
-    public static class ClientThreadMulti extends Main.ClientThread {
+    public static class ClientThreadMulti extends Thread {
+        SockServer sockServer;
+        SockClient sockClient;
         PiecePool piecePool;
 
         public ClientThreadMulti(SockServer sockServer, SockClient sockClient, PiecePool piecePool) {
-            super(sockServer, sockClient);
+            this.sockServer = sockServer;
+            this.sockClient = sockClient;
             this.piecePool = piecePool;
         }
 
@@ -95,8 +99,8 @@ public class Multi {
                     } else if (receivedMessage.contains("get")) {
                         // client want to download a file
                         String fileName = Utils.getDataFromCommand(Utils.Actions.GET, receivedMessage);
-                        File file = new File(Utils.getFolderPath()+fileName);
-                        if (file.exists()){
+                        File file = new File(Utils.getFolderPath() + fileName);
+                        if (file.exists()) {
                             SockClientTask.sendFile(sockClient, fileName, Utils.getFolderPath(), false);
                         } else {
                             sockClient.write("[GET ERROR] File not found!").send();
@@ -107,7 +111,7 @@ public class Multi {
                     } else if (receivedMessage.contains("piece")) {
                         // client want to download a piece
                         int currentPieceNumInt = currentPieceNum.incrementAndGet();
-                        if (currentPieceNumInt <= piecePool.getMaxPieceId()){
+                        if (currentPieceNumInt <= piecePool.getMaxPieceId()) {
                             sockClient.write("piece " + currentPieceNumInt).send();
                             piecePool.sendPiece(sockClient, currentPieceNumInt);
                             sockClient.send();

@@ -7,24 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66fc4846-f84d-4ded-a9f4-09cc7ccbd9e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../btl_sock_cl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/FileTranferMultiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/FileTranferP2P.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/Multi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/PiecePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/PiecePool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockClientTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/SockClientTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockServerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/SockServerTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockServerTaskMulti.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/ClientMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Multi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PiecePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PiecePool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SockClientTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockClientTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SockServerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockServerTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SockServerTaskMulti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockServerTaskMulti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Multi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-660">
-              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+            <state relative-caret-position="323">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PiecePool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="88" column="52" lean-forward="true" selection-end-line="112" />
+            <state relative-caret-position="459">
+              <caret line="112" selection-start-line="112" selection-end-line="112" />
             </state>
           </provider>
         </entry>
@@ -125,7 +115,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -180,7 +170,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Multi">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="btl_sock_sv" />
@@ -191,8 +181,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Multi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Multi" />
+    <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerMain" />
       <module name="btl_sock_sv" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,7 +197,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Multi" />
+        <item itemvalue="Application.ServerMain" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Main" />
       </list>
@@ -224,6 +214,14 @@
       <option name="presentableId" value="Default" />
       <updated>1575255769148</updated>
     </task>
+    <task id="LOCAL-00001" summary="clean code base, improve protocol, fix some bug for fun :)">
+      <created>1575553796328</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575553796328</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -236,7 +234,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70089287" weight="0.6088766" />
@@ -248,7 +246,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22063038" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2181303" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -266,6 +264,10 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="clean code base, improve protocol, fix some bug for fun :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean code base, improve protocol, fix some bug for fun :)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/SockClientTaskMulti.java" />
@@ -336,15 +338,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PiecePool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="88" column="52" lean-forward="true" selection-end-line="112" />
+        <state relative-caret-position="459">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Multi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-660">
-          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+        <state relative-caret-position="323">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
