@@ -12,7 +12,36 @@ public class SockClient {
     private DataInputStream in;
     private DataOutputStream out;
     private OnCloseListener callback;
-    private AtomicBoolean isBusy;
+
+    private PipedInputStream pis;
+    private DataOutputStream pos;
+
+    public class SockWriteQueuedThread extends Thread{
+        private PipedInputStream pis;
+        private byte[] buffer;
+
+        public SockWriteQueuedThread(PipedInputStream pis) {
+            this.pis = pis;
+            buffer = new byte[Utils.BUFFER_SIZE];
+        }
+
+        @Override
+        public void run() {
+            while(true){
+                try {
+                    int result = pis.read(buffer);
+                    write(buffer, 0, result).send();
+                } catch (IOException e) {
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                    System.out.println("[SockWriteQueuedThread] IO exception");
+                }
+            }
+        }
+    }
 
     public interface OnCloseListener {
         void onClientClose(SockClient sockClient);
@@ -24,8 +53,13 @@ public class SockClient {
         this.out = new DataOutputStream(new BufferedOutputStream(this.os));
         this.is = clientSocket.getInputStream();
         this.in = new DataInputStream(new BufferedInputStream(this.is));
-        this.isBusy = new AtomicBoolean(false);
-        this.clientIP = this.clientSocket.getInetAddress().toString();
+        this.clientIP = this.clientSocket.getInetAddress().getHostAddress();
+
+        PipedOutputStream pipeOut = new PipedOutputStream();
+        this.pis = new PipedInputStream(pipeOut);
+        this.pos = new DataOutputStream(pipeOut);
+
+        new SockWriteQueuedThread(pis).start();
     }
 
     public SockClient(Socket socket, OnCloseListener callback) throws IOException {
@@ -41,14 +75,20 @@ public class SockClient {
         this(serverIP, port);
         this.callback = callback;
     }
-    public void acquire(){
-        while(!this.isBusy.compareAndSet(false, true)){}
-    }
-    public void releaseLock(){
-        this.isBusy.set(false);
+    public SockClient write(byte[] bytes) throws IOException {
+        this.write(bytes, 0, bytes.length);
+        return this;
     }
     public SockClient write(byte[] bytes, int offset, int len) throws IOException {
         this.out.write(bytes, offset, len);
+        return this;
+    }
+    public SockClient writeQueue(byte[] bytes) throws IOException {
+        this.writeQueue(bytes, 0, bytes.length);
+        return this;
+    }
+    public SockClient writeQueue(byte[] bytes, int offset, int len) throws IOException {
+        this.pos.write(bytes, offset, len);
         return this;
     }
     public SockClient write(boolean b) throws IOException {
@@ -67,6 +107,10 @@ public class SockClient {
         this.out.writeUTF(s);
         return this;
     }
+    public SockClient writeQueue(String s) throws IOException {
+        this.pos.writeUTF(s);
+        return this;
+    }
     public SockClient writeBytes(String s) throws IOException {
         this.out.writeBytes(s);
         return this;
@@ -77,7 +121,6 @@ public class SockClient {
     }
     public void send() throws IOException {
         this.out.flush();
-        this.releaseLock();
     }
     public int read(byte[] bytes) throws IOException {
         return this.in.read(bytes);

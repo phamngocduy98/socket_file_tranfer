@@ -2,25 +2,19 @@ import java.io.*;
 import java.util.Scanner;
 
 public class ClientMain {
-    public static String FOLDER_PATH = "H:\\dl\\";
     public static PiecePool piecePool = new PiecePool();
     private static SockServer friendSockServer;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        System.out.print("Enter FOLDER_PATH (enter 1 for default: H:\\dl\\): ");
-//        String folderPath = scanner.nextLine();
-//        if (!folderPath.equals("1")) {
-//            FOLDER_PATH = folderPath;
-//        }
-        System.out.print("Enter CLIENT_ID (1,2,3,...): ");
+        System.out.print("Enter ROOT_FOLDER_PATH (H:/dl/): ");
+        String folderPath = scanner.nextLine();
+        System.out.print("Enter CLIENT_ID for subfolder name (1,2,3,...): ");
         String clientId = scanner.nextLine();
-        FOLDER_PATH = FOLDER_PATH + clientId + "\\";
+        Utils.FOLDER_PATH = folderPath +"/"+ clientId + "/";
         System.out.println("Client path = " + Utils.getFolderPath());
         System.out.print("Enter server IP: ");
         String serverIP = scanner.nextLine();
-//        String serverIP = "127.0.0.1";
-//        String serverIP = "192.168.98.2";
 //        System.out.print("Enter server port: ");
         int serverPort = 1259; //scanner.nextInt();
 //        scanner.nextLine();
@@ -50,7 +44,7 @@ public class ClientMain {
                 } else if (command.contains("get")) {
                     sockClient.write(command).send();
                 } else if (command.contains("post")) {
-                    SockClientTask.sendFile(sockClient, Utils.getDataFromCommand(Utils.Actions.POST, command), FOLDER_PATH, true);
+                    SockClientTask.sendFile(sockClient, Utils.getDataFromCommand(Utils.Actions.POST, command), Utils.FOLDER_PATH, true);
                 } else if (command.equals("@logout")) {
                     sockClient.write(command).send();
                     sockClient.close();
@@ -88,7 +82,6 @@ public class ClientMain {
                         SockClientTask.receiveLS(sockClient);
                     } else if (receivedMessage.contains("post")) {
                         // server response requested file (client download file that he requested)
-                        System.out.println("[BROADCAST Sv-Cl] Server is now sending the file!");
                         SockClientTask.receiveFile(sockClient, Utils.getDataFromCommand(Utils.Actions.POST, receivedMessage), Utils.getFolderPath(), true);
                     } else if (receivedMessage.contains("broadcast")) {
                         // server want to broadcast a file, tell client to download this file.

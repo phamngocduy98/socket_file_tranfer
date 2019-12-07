@@ -4,7 +4,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class SockClientTask {
-    public static final Utils.Sources source = Utils.Sources.CLIENT;
     public static class SendFileThread extends Thread {
         SockClient sockClient;
         String path, fileName;
@@ -54,7 +53,7 @@ public class SockClientTask {
             long startTime = System.currentTimeMillis();
             long fileLen = file.length();
             sockClient.write(fileLen).send();
-            System.out.println("[SEND " + ((source== Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] Sending File '" + fileName + "'. size = " + fileLen);
+            System.out.println("[SEND " + ((Utils.SOURCE== Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] Sending File '" + fileName + "'. size = " + fileLen);
             FileInputStream fis = new FileInputStream(path + fileName);
 
             long bytesRemainToRead = fileLen;
@@ -78,7 +77,7 @@ public class SockClientTask {
             }
             sockClient.send();
             fis.close();
-            System.out.println("[SEND " + ((source==Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] File '" + fileName + "' tranfer completed in " + (System.currentTimeMillis() - startTime) + " ms");
+            System.out.println("[SEND " + ((Utils.SOURCE==Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] File '" + fileName + "' tranfer completed in " + (System.currentTimeMillis() - startTime) + " ms");
         } else {
             System.out.println("[SEND ERROR] File not found!");
         }
@@ -90,7 +89,7 @@ public class SockClientTask {
         long startTime = System.currentTimeMillis();
         file.createNewFile();
         long fileLen = sockClient.readLong();
-        System.out.println("[RECEIVE " + ((source== Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] Downloading file " + fileName + ": size = " + fileLen);
+        System.out.println("[RECEIVE " + ((Utils.SOURCE== Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] Downloading file " + fileName + ": size = " + fileLen);
 
         FileOutputStream fos = new FileOutputStream(path + fileName);
 
@@ -102,13 +101,13 @@ public class SockClientTask {
             int result = sockClient.read(readBuffer);
             bytesRemainToRead -= result;
             fos.write(readBuffer, 0, result);
-            if (showProgress && packetNum % 100 == 0){
+            if (showProgress){
                 Utils.showProgress(Utils.Actions.DOWNLOAD, fileLen, bytesRemainToRead, startTime);
             }
         }
         fos.close();
         double duration = (double) (System.currentTimeMillis() - startTime) / 1000.0d;
         double speed = ((double) fileLen / duration / 1024.0d);
-        System.out.println("[RECEIVE " + ((source==Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] File downloaded in " + duration + " s, speed = " + String.format("%.2f", speed) + "kB/s");
+        System.out.println("[RECEIVE " + ((Utils.SOURCE==Utils.Sources.SERVER)?sockClient.getClientAddress():"") + "] File downloaded in " + duration + " s, speed = " + String.format("%.2f", speed) + "kB/s");
     }
 }

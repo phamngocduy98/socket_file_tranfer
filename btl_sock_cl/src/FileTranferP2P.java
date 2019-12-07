@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PipedInputStream;
 import java.util.ArrayList;
 
 public class FileTranferP2P {
@@ -12,14 +13,15 @@ public class FileTranferP2P {
     public void receivePiece(SockClient sockClient, PiecePool piecePool, String pieceIdStr) throws IOException {
 //        System.out.println("receive from server piece "+pieceIdStr);
         int pieceId = Integer.parseInt(pieceIdStr);
-        byte[] receiveBytes = new byte[Utils.BUFFER_SIZE];
+        byte[] receiveBytes = new byte[Utils.PIECE_SIZE];
         piecePool.receivePiece(sockClient, pieceId, receiveBytes);
         for (SockClient client : this.data.friendsSock) {
 //            System.out.println("Share piece"+pieceIdStr+" = "+Utils.checksum(receiveBytes));
-            client.write("piece "+pieceIdStr);
-            client.write(receiveBytes, 0, receiveBytes.length).send();
+            client.writeQueue("piece "+pieceIdStr);
+            client.writeQueue(receiveBytes, 0, receiveBytes.length).send();
 //            piecePool.sendOwnedPiece(client, pieceId);
         }
+        receiveBytes = null;
     }
 
     public void nextPiece(SockClient sockClient) throws IOException {

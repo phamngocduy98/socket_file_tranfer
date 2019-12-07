@@ -37,7 +37,7 @@ public class SockServerTask {
         }
         es.shutdown();
         boolean finished = es.awaitTermination(30, TimeUnit.MINUTES);
-        System.out.println("[BROADCAST FILE] (Sv-Cl)] Broadcast file '" + fileName + "' tranfer completed in " + ((double)System.currentTimeMillis() - startTime)/1000d + " s");
+        System.out.println("[BROADCAST FILE] (Sv-Cl)] Broadcast file '" + fileName + "' completed in " + ((double)System.currentTimeMillis() - startTime)/1000d + " s");
         return finished;
     }
 }

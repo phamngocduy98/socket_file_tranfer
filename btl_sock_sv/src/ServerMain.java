@@ -14,12 +14,17 @@ public class ServerMain {
         SockServer sockServer = null;
         piecePool = new PiecePool();
 
-        System.out.print("Enter server ip: ");
-        String ip = scanner.nextLine();
+        System.out.print("Enter ROOT_FOLDER_PATH (H:/dl/): ");
+        String folderPath = scanner.nextLine();
+        Utils.FOLDER_PATH = folderPath+"/sv/";
+        System.out.println("SERVER_FOLDER_PATH = "+Utils.FOLDER_PATH);
+//        System.out.print("Enter server ip: ");
+//        String ip = scanner.nextLine();
 //        String ip = "192.168.98.2";
 //        String ip = "127.0.0.1";
         try {
-            sockServer = new SockServer(ip, 1259);
+//            sockServer = new SockServer(ip, 1259);
+            sockServer = new SockServer(1259);
             System.out.println("[SERVER] Listening " + sockServer.getServerIP() + ":" + sockServer.getServerPort());
         } catch (UnknownHostException e) {
             System.out.println("[ERROR] Server bind error, check server ip");
@@ -113,7 +118,7 @@ public class ServerMain {
                         int currentPieceNumInt = currentPieceNum.incrementAndGet();
                         if (currentPieceNumInt <= piecePool.getMaxPieceId()) {
                             sockClient.write("piece " + currentPieceNumInt).send();
-                            piecePool.sendPiece(sockClient, currentPieceNumInt);
+                            piecePool.sendNextPiece(sockClient, currentPieceNumInt);
                             sockClient.send();
                         }
                     }

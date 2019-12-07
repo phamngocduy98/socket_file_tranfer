@@ -10,8 +10,6 @@ import java.util.regex.Pattern;
 
 public class SockServer implements SockClient.OnCloseListener {
     public final static int BACKLOG = 50;
-    public static final String FOLDER_PATH = "H:\\dl\\sv\\";
-
 
     private int serverPort;
     private ServerSocket serverSocket;
