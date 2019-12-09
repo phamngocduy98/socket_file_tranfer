@@ -14,14 +14,16 @@ public class ServerMain {
         SockServer sockServer = null;
         piecePool = new PiecePool();
 
-        System.out.print("Enter ROOT_FOLDER_PATH (H:/dl/): ");
-        String folderPath = scanner.nextLine();
-        Utils.FOLDER_PATH = folderPath+"/sv/";
+        File folder = new File(Utils.getFolderPath());
+        while(!folder.isDirectory() || !folder.exists()){
+            System.out.print("Enter SV_FOLDER_PATH (H:/dl/sv/): ");
+            Utils.FOLDER_PATH = scanner.nextLine()+"/";
+            folder = new File(Utils.getFolderPath());
+        }
+
         System.out.println("SERVER_FOLDER_PATH = "+Utils.FOLDER_PATH);
 //        System.out.print("Enter server ip: ");
 //        String ip = scanner.nextLine();
-//        String ip = "192.168.98.2";
-//        String ip = "127.0.0.1";
         try {
 //            sockServer = new SockServer(ip, 1259);
             sockServer = new SockServer(1259);

@@ -4,17 +4,23 @@ import java.util.Scanner;
 public class ClientMain {
     public static PiecePool piecePool = new PiecePool();
     private static SockServer friendSockServer;
+    private static String serverIP = "192.168.98.2";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter ROOT_FOLDER_PATH (H:/dl/): ");
-        String folderPath = scanner.nextLine();
-        System.out.print("Enter CLIENT_ID for subfolder name (1,2,3,...): ");
-        String clientId = scanner.nextLine();
-        Utils.FOLDER_PATH = folderPath +"/"+ clientId + "/";
+        File folder = new File(Utils.getFolderPath());
+
+        while(!folder.isDirectory() || !folder.exists()){
+            System.out.print("Enter CLIENT_FOLDER_PATH (H:/dl/): ");
+            Utils.FOLDER_PATH = scanner.nextLine()+"/";
+            folder = new File(Utils.getFolderPath());
+        }
+//        System.out.print("Enter CLIENT_ID for subfolder name (1,2,3,...): ");
+//        String clientId = scanner.nextLine();
+//        Utils.FOLDER_PATH = Utils.FOLDER_PATH + clientId + "/";
         System.out.println("Client path = " + Utils.getFolderPath());
         System.out.print("Enter server IP: ");
-        String serverIP = scanner.nextLine();
+        serverIP = scanner.nextLine();
 //        System.out.print("Enter server port: ");
         int serverPort = 1259; //scanner.nextInt();
 //        scanner.nextLine();

@@ -5,11 +5,11 @@ import java.util.zip.Adler32;
 import java.util.zip.Checksum;
 
 public class Utils {
-    public static String FOLDER_PATH = "H:\\dl\\sv\\";
+    public static String FOLDER_PATH = "H:/dl/sv/";
     public static final Utils.Sources SOURCE = Utils.Sources.SERVER;
 
-    public static final int BUFFER_SIZE = 8 * 1024;
-    public static final int PIECE_SIZE = 8 * 1024;
+    public static final int BUFFER_SIZE = 128 * 1024;
+    public static final int PIECE_SIZE = 4 * 1024  * 1024;
     public static final Pattern getPattern = Pattern.compile("(?<=(get|GET|geT|gEt|gET|Get|GeT|GEt).).*");
     public static final Pattern postPattern = Pattern.compile("(?<=(post|POST).).*");
     public static final Pattern piecePattern = Pattern.compile("(?<=(piece|PIECE).).*");

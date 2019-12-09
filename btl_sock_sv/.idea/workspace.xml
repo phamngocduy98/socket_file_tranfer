@@ -9,18 +9,11 @@
     <list default="true" id="66fc4846-f84d-4ded-a9f4-09cc7ccbd9e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../btl_sock_cl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/FileTranferP2P.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/FileTranferP2P.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/PiecePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/PiecePool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/SockClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/SockClientTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/SockClientTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../btl_sock_cl/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../btl_sock_cl/src/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PiecePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PiecePool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SockClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SockClientTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockClientTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SockServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SockServerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SockServerTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ServerMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+            <state relative-caret-position="221">
+              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SockServerTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
+            <state relative-caret-position="561">
               <caret line="39" column="87" selection-start-line="39" selection-start-column="87" selection-end-line="39" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -62,15 +55,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PiecePool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="135" selection-start-line="135" selection-end-line="135" />
+            <state relative-caret-position="119">
+              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding>
-                <element signature="e#1359#1360#0" expanded="true" />
-                <element signature="e#1421#1422#0" expanded="true" />
-                <element signature="e#5042#5043#0" expanded="true" />
-                <element signature="e#5073#5074#0" expanded="true" />
-                <element signature="e#5107#5108#0" expanded="true" />
-                <element signature="e#5140#5141#0" expanded="true" />
+                <element signature="e#1338#1339#0" expanded="true" />
+                <element signature="e#1409#1410#0" expanded="true" />
+                <element signature="e#4906#4907#0" expanded="true" />
+                <element signature="e#4937#4938#0" expanded="true" />
+                <element signature="e#4971#4972#0" expanded="true" />
+                <element signature="e#5004#5005#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,11 +73,9 @@
         <entry file="file://$PROJECT_DIR$/src/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1086#1087#0" expanded="true" />
-                <element signature="e#1123#1124#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,20 +84,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SockClientTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
+            <state relative-caret-position="1819">
               <caret line="110" column="55" selection-end-line="113" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SockClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="128" column="40" lean-forward="true" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -168,13 +150,13 @@
         <option value="$PROJECT_DIR$/src/SockServerTaskMulti.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Multi.java" />
-        <option value="$PROJECT_DIR$/src/SockClient.java" />
-        <option value="$PROJECT_DIR$/src/PiecePool.java" />
         <option value="$PROJECT_DIR$/src/SockServerTask.java" />
         <option value="$PROJECT_DIR$/src/SockServer.java" />
         <option value="$PROJECT_DIR$/src/SockClientTask.java" />
-        <option value="$PROJECT_DIR$/src/ServerMain.java" />
+        <option value="$PROJECT_DIR$/src/SockClient.java" />
+        <option value="$PROJECT_DIR$/src/PiecePool.java" />
         <option value="$PROJECT_DIR$/src/Utils.java" />
+        <option value="$PROJECT_DIR$/src/ServerMain.java" />
       </list>
     </option>
   </component>
@@ -189,8 +171,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,7 +289,7 @@
     <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70089287" weight="0.3147651" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70089287" weight="0.3148405" />
       <window_info id="Structure" order="1" sideWeight="0.29910713" side_tool="true" weight="0.28683916" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -316,7 +298,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21776505" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4068768" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -361,8 +343,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SockClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="128" column="40" lean-forward="true" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
+        <state relative-caret-position="17">
+          <caret line="117" column="15" lean-forward="true" selection-end-line="170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SockServerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="39" column="87" selection-start-line="39" selection-start-column="87" selection-end-line="39" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SockClientTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="110" column="55" selection-end-line="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -373,37 +375,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SockClientTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="110" column="55" selection-end-line="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SockServerTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="39" column="87" selection-start-line="39" selection-start-column="87" selection-end-line="39" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PiecePool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
+        <state relative-caret-position="119">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
           <folding>
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#5042#5043#0" expanded="true" />
-            <element signature="e#5073#5074#0" expanded="true" />
-            <element signature="e#5107#5108#0" expanded="true" />
-            <element signature="e#5140#5141#0" expanded="true" />
+            <element signature="e#1338#1339#0" expanded="true" />
+            <element signature="e#1409#1410#0" expanded="true" />
+            <element signature="e#4906#4907#0" expanded="true" />
+            <element signature="e#4937#4938#0" expanded="true" />
+            <element signature="e#4971#4972#0" expanded="true" />
+            <element signature="e#5004#5005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -411,19 +393,17 @@
     <entry file="file://$PROJECT_DIR$/src/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+        <state relative-caret-position="221">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
