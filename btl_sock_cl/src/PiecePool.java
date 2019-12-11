@@ -107,13 +107,23 @@ public class PiecePool {
             readCall.incrementAndGet();
             bytesRead += sockClient.read(writeBuffer, bytesRead, bytesToRead - bytesRead);
         }
+        int finalBytesRead = bytesRead;
+        new Thread(() -> {
+            try {
+                savePiece(ownedPiece, writeBuffer, finalBytesRead, pieceId, fileName);
+            } catch (IOException e) {
+                System.out.println("[SAVE PIECE] IO Exception");
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    public void savePiece(Map ownedPiece, byte[]writeBuffer, int bufferSize, int pieceId, String fileName) throws IOException {
         String pieceFileName = Utils.getFolderPath() + fileName + "." + pieceId;
         BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(pieceFileName));
-        fout.write(writeBuffer, 0, bytesRead);
+        fout.write(writeBuffer, 0, bufferSize);
         fout.close();
         ownedPiece.put(pieceId, pieceFileName);
-//        long checksum = Utils.checksum(writeBuffer);
-//        System.out.println("receive piece checksum="+checksum);
         Utils.showPieceProgress(Utils.Actions.DOWNLOAD, maxPieceId, ownedPiece.size(), Utils.startTime);
 //        System.out.println("[PIECE] "+pieceId+"/"+maxPieceId+" (size="+bytesToRead+")");
         if (ownedPiece.size() > maxPieceId) {
@@ -122,7 +132,6 @@ public class PiecePool {
             System.out.println("[BROADCAST P2P] Download complete in" + duration + "s . Speed = " + String.format("%.1f", fileSize / 1024d / duration) + " kB/s");
             mergePieces();
         }
-//        return checksum;
     }
 
     public void mergePieces() throws IOException {

@@ -9,7 +9,7 @@ public class Utils {
     public static final Utils.Sources SOURCE = Utils.Sources.CLIENT;
 
     public static final int BUFFER_SIZE = 128 * 1024;
-    public static final int PIECE_SIZE = 4 * 1024  * 1024;
+    public static final int PIECE_SIZE = 512  * 1024;
     public static final Pattern getPattern = Pattern.compile("(?<=(get|GET|geT|gEt|gET|Get|GeT|GEt).).*");
     public static final Pattern postPattern = Pattern.compile("(?<=(post|POST).).*");
     public static final Pattern piecePattern = Pattern.compile("(?<=(piece|PIECE).).*");

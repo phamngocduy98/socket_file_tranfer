@@ -100,6 +100,8 @@ public class ClientMain {
                         Utils.setStartTime();
                     } else if (receivedMessage.contains("piece")) {
                         // server will send a piece
+//                        String pieceId = Utils.getDataFromCommand(Utils.Actions.PIECE, receivedMessage);
+//                        System.out.println("Server piece "+pieceId);
                         fileTranferP2P.receivePiece(sockClient, piecePool, Utils.getDataFromCommand(Utils.Actions.PIECE, receivedMessage));
                         fileTranferP2P.nextPiece(sockClient);
                         continue;
